@@ -4,7 +4,7 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   stages {
-    stage('Scan') {
+    stage('SonarQube Scan') {
       steps {
         withSonarQubeEnv(installationName: 'sonarserver') { 
           sh 'chmod +x mvnw'
