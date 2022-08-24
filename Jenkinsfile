@@ -12,13 +12,10 @@ pipeline {
         }
       }
     }
-    
-    stage("Quality Gate") {
-       steps {
-         timeout(time: 1, unit: 'HOURS') {
-            waitForQualityGate abortPipeline: true
-          }
-        }
-     }
+  }
+  post {
+    failure {
+      mail bcc: '', body: 'The build of this project failed!', cc: '', from: 'BE Ventas Manager <beventas@jenkis.com>', replyTo: 'adaligaji@gmail.com', subject: 'Build Failure on master Branch, please review code before merging with other branches', to: 'garran191137@unis.edu.gt'
+    }
   }
 }
