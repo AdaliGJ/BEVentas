@@ -12,10 +12,14 @@ pipeline {
         }
       }
     }
-    stage('send email'){
-      steps {
-        mail bcc: '', body: 'The build of this project failed!', cc: '', from: 'BE Ventas Manager <beventas@jenkis.com>', replyTo: 'adaligaji@gmail.com', subject: 'Build Failure', to: 'garran191137@unis.edu.gt'
-      }
+  }
+  post {
+    failure {
+      mail to: 'garran191137@unis.edu.gt, adaligaji@gmail.com', 
+        body: 'Build Failure on dev Branch! Please review code before merging with other branches.', 
+        from: 'BE Ventas Manager <beventas@jenkis.com>', 
+        replyTo: 'garran191137@unis.edu.gt', 
+        subject: 'Build Failure'     
     }
   }
 }
