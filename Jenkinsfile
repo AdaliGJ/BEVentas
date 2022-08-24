@@ -13,4 +13,13 @@ pipeline {
       }
     }
   }
+  post {
+    failure {
+      mail to: 'garran191137@unis.edu.gt, adaligaji@gmail.com', 
+        body: 'Build Failure on uat Branch! Please review code before merging with other branches.', 
+        from: 'BE Ventas Manager <beventas@jenkis.com>', 
+        replyTo: 'garran191137@unis.edu.gt', 
+        subject: 'Build Failure'     
+    }
+  }
 }
