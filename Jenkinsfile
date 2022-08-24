@@ -19,8 +19,7 @@ pipeline {
         body: '{$BUILD_NUMBER} Build Failure on master Branch! Please review code before merging with other branches.', 
         from: 'BE Ventas Manager <beventas@jenkis.com>', 
         replyTo: 'adaligaji@gmail.com', 
-        subject: 'Build Failure',
-        attachLog: true
+        subject: 'Build Failure'
     }
   }
 }
