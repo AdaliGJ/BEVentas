@@ -16,7 +16,7 @@ pipeline {
   post {
     failure {
       mail to: 'garran191137@unis.edu.gt, adaligaji@gmail.com', 
-        body: 'Build Failure on master Branch! Please review code before merging with other branches. ${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}', 
+        body: 'Build Failure on master Branch! Please review code before merging with other branches.', 
         from: 'BE Ventas Manager <beventas@jenkis.com>', 
         replyTo: 'garran191137@unis.edu.gt', 
         subject: 'Build Failure'     
