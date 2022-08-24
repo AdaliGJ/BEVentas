@@ -15,7 +15,7 @@ pipeline {
   }
   post {
     failure {
-      mail bcc: '', body: 'The build of this project failed!', cc: '', from: 'BE Ventas Manager <beventas@jenkis.com>', replyTo: 'adaligaji@gmail.com', subject: 'Build Failure on master Branch, please review code before merging with other branches', to: 'garran191137@unis.edu.gt'
+      mail bcc: '', body: 'Build Failure on master Branch! Please review code before merging with other branches. ${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}', cc: '', from: 'BE Ventas Manager <beventas@jenkis.com>', replyTo: 'adaligaji@gmail.com', subject: 'Build Failure', to: 'garran191137@unis.edu.gt'
     }
   }
 }
