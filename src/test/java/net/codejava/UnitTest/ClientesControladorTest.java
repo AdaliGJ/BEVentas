@@ -63,7 +63,7 @@ public class ClientesControladorTest {
 	    
 	    LinkedMultiValueMap<String,String> params = new LinkedMultiValueMap<>();
 		params.add("nNit", "1234567");
-		params.add("nTipoCliente","2");
+		params.add("nTipoCliente","3");
 		
 		
 	    
