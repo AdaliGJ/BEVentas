@@ -54,7 +54,7 @@ public class ClientesControladorTest {
 	            .get("/Clientes/ObtenerTodos")
 	            .contentType(APPLICATION_JSON))
 	            .andExpect(status().isOk())
-	            .andExpect(jsonPath("$[1].nit", is(96398315)))
+	            .andExpect(jsonPath("$[1].nit", is(9639831)))
 	            .andReturn();
 	}
 	
