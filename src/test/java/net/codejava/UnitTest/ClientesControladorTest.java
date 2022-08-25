@@ -54,7 +54,7 @@ public class ClientesControladorTest {
 	            .get("/Clientes/ObtenerTodos")
 	            .contentType(APPLICATION_JSON))
 	            .andExpect(status().isOk())
-	            .andExpect(jsonPath("$[1].nit", is(9639831)))
+	            .andExpect(jsonPath("$[1].nit", is(9639832)))
 	            .andReturn();
 	}
 	
@@ -63,7 +63,7 @@ public class ClientesControladorTest {
 	    
 	    LinkedMultiValueMap<String,String> params = new LinkedMultiValueMap<>();
 		params.add("nNit", "1234567");
-		params.add("nTipoCliente","3");
+		params.add("nTipoCliente","2");
 		
 		
 	    
