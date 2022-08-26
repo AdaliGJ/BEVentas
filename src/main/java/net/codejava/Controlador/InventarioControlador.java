@@ -150,13 +150,7 @@ public class InventarioControlador {
 		Optional<Inventario> n = repositorioInventario.findById(nIdInventario);
 		Inventario _n = n.get();
 		
-		if(true){
-			a1 = 2:	
-		}
-		if(true){
-			a2 = 2:	
-		}
-
+		
 		if(nCategoriaDipositivo != "") {
 			_n.setCategoriaDispositivo(Integer.parseInt(nCategoriaDipositivo));
 		}
@@ -208,6 +202,13 @@ public class InventarioControlador {
 		
 		Optional<Inventario> n = repositorioInventario.findById(nIdInventario);
 		Inventario _n = n.get();
+		
+		if(true){
+			int a1 = 2;	
+		}
+		if(true){
+			int a2 = 2;	
+		}
 		
 		
 		if(nOperacion.equals("Agregar")) {
