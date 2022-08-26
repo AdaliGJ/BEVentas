@@ -150,6 +150,16 @@ public class InventarioControlador {
 		Optional<Inventario> n = repositorioInventario.findById(nIdInventario);
 		Inventario _n = n.get();
 		
+		if(true){
+			int n1 = 2;	
+		}
+		if(true){
+			int n2 = 2;	
+		}
+		if(true){
+			int n3 = 2;	
+		}
+		
 
 		if(nCategoriaDipositivo != "") {
 			_n.setCategoriaDispositivo(Integer.parseInt(nCategoriaDipositivo));
