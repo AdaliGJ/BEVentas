@@ -4,5 +4,5 @@ name: default
 steps:
 - name: test
   image: maven:3-jdk-10
-  commands:
+  commands: 
   - mvn clean verify sonar:sonar
