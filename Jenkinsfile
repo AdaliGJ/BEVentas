@@ -9,17 +9,11 @@ pipeline {
         withSonarQubeEnv(installationName: 'sonarserver') { 
           sh 'chmod +x mvnw'
           sh './mvnw clean verify sonar:sonar'
+          sleep(10)
+          waitForQualityGate abortPipeline: true
         }
       }
     }
-    stage("Quality Gate") {
-            steps {
-              timeout(time: 1, unit: 'HOURS') {
-                waitForQualityGate abortPipeline: true
-              }
-            }
-          }
-    
   }
   post {
     failure {
