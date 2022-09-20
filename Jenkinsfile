@@ -12,10 +12,18 @@ pipeline {
         }
       }
     }
+    stage("Quality Gate") {
+            steps {
+              timeout(time: 5, unit: 'MINUTES') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
+    
   }
   post {
     failure {
-      mail to: 'garran191137@unis.edu.gt, adaligaji@gmail.com', 
+      mail to: 'garran191137@unis.edu.gt', 
         body: 'Build Failure on dev Branch! Please review code before merging with other branches.', 
         from: 'BE Ventas Manager <beventas@jenkis.com>', 
         replyTo: 'garran191137@unis.edu.gt', 
