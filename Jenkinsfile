@@ -11,7 +11,15 @@ pipeline {
           sh './mvnw clean verify sonar:sonar'
         }
       }
-    } 
+    }
+    stage("Quality Gate") {
+            steps {
+              timeout(time: 5, unit: 'MINUTES') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
+    
   }
   post {
     failure {
