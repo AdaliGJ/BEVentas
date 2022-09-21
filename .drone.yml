@@ -5,7 +5,5 @@ steps:
 - name: code-analysis
 image: aosapps/drone-sonar-plugin
 settings:
-    sonar_host:
-      from_secret: 'http://localhost:9000'
-    sonar_token:
-      from_secret: 'squ_9d3645ed7875428ecc6e7aaceebc4a359c716b2c'
+    sonar_host: 'http://localhost:9000'
+    sonar_token: 'squ_9d3645ed7875428ecc6e7aaceebc4a359c716b2c'
