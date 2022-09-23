@@ -23,7 +23,7 @@ pipeline {
   }
   post {
     failure {
-      mail to: 'garran191137@unis.edu.gt', 
+      mail to: 'garran191137@unis.edu.gt, jflores@unis.edu.gt', 
         body: "Build Failure en el pipline  ${env.JOB_NAME}. Por favor revise el código antes de realizar algún merge con otras ramas. Build: ${env.BUILD_DISPLAY_NAME}. Puede encontrar el link del build aquí: ${env.BUILD_URL}", 
         from: 'BE Ventas Manager <beventas@jenkis.com>', 
         replyTo: 'garran191137@unis.edu.gt', 
