@@ -6,7 +6,9 @@ name: Java CI with Maven
 on: 
   push:
     branches:  
-     - uat, dev, master
+     - uat
+     - master
+     - dev
    
 
 jobs:
