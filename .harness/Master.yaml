@@ -1,0 +1,48 @@
+pipeline:
+  name: Master
+  identifier: Master
+  projectIdentifier: BEVentas
+  orgIdentifier: default
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesHosted
+            spec:
+              identifier: k8s-hosted-infra
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: "Check Sonar "
+                  identifier: Check_Sonar
+                  spec:
+                    command: mvn clean verify sonar:sonar -D"sonar.qualitygate.wait=true" -D"sonar.projectKey=net.codejava:Ventas" -D"sonar.host.url=https://slow-words-rule-200-119-179-141.loca.lt" -D"sonar.login=squ_9d3645ed7875428ecc6e7aaceebc4a359c716b2c"
+                    connectorRef: account.harnessImage
+                    image: maven:3-jdk-11
+                    settings:
+                      sonar_host: https://slow-words-rule-200-119-179-141.loca.lt
+                      sonar_token: squ_9d3645ed7875428ecc6e7aaceebc4a359c716b2c
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github_OAuth_1663538006000
+        repoName: AdaliGJ/BEVentas
+        build: <+input>
+  notificationRules:
+    - name: Failed Pipeline
+      identifier: Failed_Pipeline
+      pipelineEvents:
+        - type: PipelineFailed
+      notificationMethod:
+        type: Email
+        spec:
+          userGroups: []
+          recipients:
+            - garran191137@unis.edu.gt
+            - jflores@unis.edu.gt
+      enabled: true
