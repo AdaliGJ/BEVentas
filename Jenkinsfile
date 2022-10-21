@@ -5,7 +5,7 @@ pipeline {
   } 
   stages {
     stage('SonarQube Scan') {
-      steps {
+      steps { 
         withSonarQubeEnv(installationName: 'sonarserver') { 
           sh 'chmod +x mvnw'
           sh './mvnw clean verify sonar:sonar'
