@@ -42,8 +42,7 @@ public class UsuariosControlador {
 	 */
 	@GetMapping("/ObtenerTodos")
 	public @ResponseBody Iterable<Usuarios> getAll(){
-		return 'hola';
-		//return repositorioUsuarios.findAll();
+		return repositorioUsuarios.findAll();
 	}
 	/**
 	 * Obtener un solo registro de la tabla USUARIOS con la ayuda de su identificador
@@ -87,7 +86,7 @@ public class UsuariosControlador {
 		if(n.isEmpty()) {
 			response.put("respuesta", "error");
 		}else {
-			response.put("respuesta", "ok");
+			response.put("respuesta", "ok Magic");
 		}
 		
 		
