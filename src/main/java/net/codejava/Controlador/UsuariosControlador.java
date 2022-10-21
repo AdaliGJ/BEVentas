@@ -42,7 +42,8 @@ public class UsuariosControlador {
 	 */
 	@GetMapping("/ObtenerTodos")
 	public @ResponseBody Iterable<Usuarios> getAll(){
-		return repositorioUsuarios.findAll();
+		return 'hola';
+		//return repositorioUsuarios.findAll();
 	}
 	/**
 	 * Obtener un solo registro de la tabla USUARIOS con la ayuda de su identificador
