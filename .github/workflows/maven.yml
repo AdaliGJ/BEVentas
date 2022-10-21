@@ -5,10 +5,11 @@ name: Java CI with Maven
  
 on: 
   push:
-    branches:  
-     - uat
-     - master
-     - dev
+    branches:
+     - '*'
+     - 'uat'
+     - 'master'
+     - 'dev'
    
 
 jobs:
