@@ -92,4 +92,17 @@ public class UsuariosControlador {
 		
 		return response;
 	}
+	
+	@GetMapping("/Branch")
+	public @ResponseBody Map<String,String> getBranch() {
+	
+		HashMap<String,String> response = new HashMap<>();
+		
+		
+		response.put("respuesta", "Dev");
+
+		
+		
+		return response;
+	}
 }
