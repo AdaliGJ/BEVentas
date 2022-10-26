@@ -92,4 +92,17 @@ public class UsuariosControlador {
 		
 		return response;
 	}
+	
+	@GetMapping("/Branch")
+	public @ResponseBody Map<String,String> registrar(@RequestParam int nIdUsuario, @RequestParam String nPassword) {
+	
+		HashMap<String,String> response = new HashMap<>();
+		
+		
+		response.put("respuesta", "Master");
+
+		
+		
+		return response;
+	}
 }
