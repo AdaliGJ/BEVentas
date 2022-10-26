@@ -94,7 +94,7 @@ public class UsuariosControlador {
 	}
 	
 	@GetMapping("/Branch")
-	public @ResponseBody Map<String,String> registrar(@RequestParam int nIdUsuario, @RequestParam String nPassword) {
+	public @ResponseBody Map<String,String> getBranch(@RequestParam int nIdUsuario, @RequestParam String nPassword) {
 	
 		HashMap<String,String> response = new HashMap<>();
 		
