@@ -96,4 +96,18 @@ public class UsuariosControladorTest {
 	    //System.out.println(mvcResult.getResponse().getContentAsString());
 	    
 	}
+	
+	@Test
+	public void obtenerBranchSuccess() throws Exception {
+	   
+	    
+	    MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
+	            .get("/Usuarios/Branch")
+	            .contentType(APPLICATION_JSON))
+	            .andExpect(status().isOk())
+	            .andReturn();
+	    
+	    //System.out.println(mvcResult.getResponse().getContentAsString());
+	    
+	}
 }
