@@ -3,7 +3,7 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
-  stages {
+  stages { 
     stage('SonarQube Scan') {
       steps {
         withSonarQubeEnv(installationName: 'sonarserver') { 
